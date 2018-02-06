@@ -29,7 +29,7 @@ public class FirebaseJsonConvert {
 				JSONObject data_user= (JSONObject) jsonObject.get("user_dim");
 				JSONArray data_event= (JSONArray) jsonObject.get("event_dim");
                 
-                //user_dimの展開
+				//user_dimの展開
 				String user_id = "";
 				String first_open_timestamp_micros = "";
 				
@@ -122,7 +122,7 @@ public class FirebaseJsonConvert {
 					String firebase_screen_id = "";
 					String engagement_time_msec = "";
 					
-                    // eventの数（ヒットの数）だけループ
+					// eventの数（ヒットの数）だけループ
 					for(int j=0; j<data_event2.size(); j++) {	
 						JSONObject params = (JSONObject) data_event2.get(j);
 						
@@ -138,7 +138,7 @@ public class FirebaseJsonConvert {
 							try { engagement_time_msec = (String) value.get("int_value"); } catch(Exception e) {}
 						} 
 						
-                        // StringBufferに値を詰め込む。最後に改行を入れる。
+						// StringBufferに値を詰め込む。最後に改行を入れる。
 						cols.append(user_id);
 						cols.append("\t");
 						cols.append(first_open_timestamp_micros);
@@ -199,7 +199,7 @@ public class FirebaseJsonConvert {
 						cols.append("\t");
 						cols.append(event_name);
 						cols.append("\t");
-                        cols.append(timestamp_micros);
+						cols.append(timestamp_micros);
 						cols.append("\t");
 						cols.append(firebase_screen_class);
 						cols.append("\t");
