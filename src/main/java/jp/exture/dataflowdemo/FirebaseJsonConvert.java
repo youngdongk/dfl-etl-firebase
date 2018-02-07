@@ -4,6 +4,8 @@ import org.apache.beam.runners.dataflow.DataflowRunner;
 import org.apache.beam.runners.dataflow.options.DataflowPipelineOptions;
 import org.apache.beam.sdk.Pipeline;
 import org.apache.beam.sdk.io.TextIO;
+import org.apache.beam.sdk.options.Description;
+import org.apache.beam.sdk.options.PipelineOptions;
 import org.apache.beam.sdk.options.PipelineOptionsFactory;
 import org.apache.beam.sdk.transforms.DoFn;
 import org.apache.beam.sdk.transforms.ParDo;
@@ -215,18 +217,24 @@ public class FirebaseJsonConvert {
             c.output(rows);
         }
     }
-
+    
+    public interface DflOptions extends PipelineOptions {
+    	
+        String getInput();
+        void setInput(String value);
+        
+        String getOutput();
+        void setOutput(String value);
+    }
+    
     public static void main(String[] args) {
-        DataflowPipelineOptions options = PipelineOptionsFactory.as(DataflowPipelineOptions.class);
-        options.setProject("exture-cto-sandbox");
-        options.setGcpTempLocation("gs://exture-cto-dataflow/android/tmp");
-        options.setStagingLocation("gs://exture-cto-dataflow/android/stg");
-        options.setRunner(DataflowRunner.class);
+    		PipelineOptionsFactory.register(DflOptions.class);
+    		DflOptions options = PipelineOptionsFactory.fromArgs(args).withValidation().as(DflOptions.class);
         Pipeline p = Pipeline.create(options);
-
-        PCollection<String> lines = p.apply("ReadJsonFile", TextIO.read().from("gs://exture-cto-dataflow/android/20180205.json"));
+        
+        PCollection<String> lines = p.apply("ReadJsonFile", TextIO.read().from(options.getInput()));
         PCollection<String> output = lines.apply("FlattenJsonFile", ParDo.of(new FlattenJsonFn()));
-        output.apply("WriteTsvFile", TextIO.write().to("gs://exture-cto-dataflow/android/flat20180205").withSuffix(".tsv"));
+        output.apply("WriteTsvFile", TextIO.write().to(options.getOutput()).withSuffix(".tsv"));
 
         p.run().waitUntilFinish();
     }
