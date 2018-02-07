@@ -15,7 +15,8 @@ https://cloud.google.com/dataflow/docs/quickstarts/quickstart-java-eclipse
 の記事を参考にして、Eclipse上でDataflowを使えるようにしてください。
 
 Argumentが2つ必要です。
-BigQueryからエクスポートしたJSONファイル
+input: BigQueryからエクスポートしたJSONファイル
+output: Cloud Storageにエクスポートするファイルのprefix
 
 ```
 --input=gs:<bucket名>/変換対象のファイル --output=gs://<bucket名>/出力ファイルのprefix
