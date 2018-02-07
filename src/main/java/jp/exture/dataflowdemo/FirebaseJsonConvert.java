@@ -228,8 +228,8 @@ public class FirebaseJsonConvert {
     }
     
     public static void main(String[] args) {
-    		PipelineOptionsFactory.register(DflOptions.class);
-    		DflOptions options = PipelineOptionsFactory.fromArgs(args).withValidation().as(DflOptions.class);
+        PipelineOptionsFactory.register(DflOptions.class);
+        DflOptions options = PipelineOptionsFactory.fromArgs(args).withValidation().as(DflOptions.class);
         Pipeline p = Pipeline.create(options);
         
         PCollection<String> lines = p.apply("ReadJsonFile", TextIO.read().from(options.getInput()));
