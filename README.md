@@ -1,5 +1,6 @@
-# Dataflowサンプル
-FirebaseAnalyticsのデータをBigQuery Exportした時に生成されるJSON形式のスキーマを、フラットな一行のタブ区切りファイル(TSV)形式に変換するためのパイプライン処理をCloud Dataflowで実装した例です。
+# dfl-etl-firebase
+
+FirebaseAnalyticsのJSON形式のBigQueryスキーマを、フラットな一行のタブ区切りファイル(TSV)形式に変換するためのパイプライン処理をCloud Dataflowで実装した例です。
 
 Google Cloud PlatformのCloud Dataflowの他に、Cloud Storageも使います。
 
