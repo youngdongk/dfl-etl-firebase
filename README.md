@@ -28,7 +28,7 @@ Argumentが2つ必要です。
 
 input: BigQueryからエクスポートしたJSONファイル
 
-output: Cloud Storageにエクスポートするファイルのprefix
+output: Cloud Storageに出力するファイルのprefix
 
 
 ```
@@ -42,7 +42,7 @@ $ mvn compile exec:java \
     -Dexec.mainClass=jp.exture.dataflowdemo.FirebaseJsonConvert \
     -Dexec.args="--project=<project名> \
     --stagingLocation=gs://<バケット名>/<ステージングフォルダ>/ \
-    --input=gs://<バケット名>/20160607.json \
-    --output=gs://<バケット名>/flat20160607 \
+    --input=gs://<バケット名>/変換対象のファイル \
+    --output=gs://<バケット名>/出力ファイルのprefix \
     --runner=DataflowRunner"
 ```
