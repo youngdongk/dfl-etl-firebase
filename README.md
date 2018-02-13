@@ -34,3 +34,15 @@ output: Cloud Storageにエクスポートするファイルのprefix
 ```
 --input=gs:<bucket名>/変換対象のファイル --output=gs://<bucket名>/出力ファイルのprefix
 ```
+
+コマンドラインで実行したい場合はmavenで実行します。
+
+```
+$ mvn compile exec:java \
+    -Dexec.mainClass=jp.exture.dataflowdemo.FirebaseJsonConvert \
+    -Dexec.args="--project=<project名> \
+    --stagingLocation=gs://<バケット名>/<ステージングフォルダ>/ \
+    --input=gs://<バケット名>/20160607.json \
+    --output=gs://<バケット名>/flat20160607 \
+    --runner=DataflowRunner"
+```
