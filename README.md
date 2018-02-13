@@ -8,7 +8,15 @@ Google Cloud PlatformのCloud Dataflowの他に、Cloud Storageも使います�
 JSONパースのためにjson-simpleを使います。
 https://code.google.com/archive/p/json-simple/
 
-ビルドパスにjson-simple-1.1.1.jarを追加してビルドしてください。
+pom.xmlにdependencyを追加してください。
+
+```
+<dependency>
+  <groupId>com.googlecode.json-simple</groupId>
+  <artifactId>json-simple</artifactId>
+  <version>1.1.1</version>
+</dependency>
+```
 
 ## 使い方
 https://cloud.google.com/dataflow/docs/quickstarts/quickstart-java-eclipse
