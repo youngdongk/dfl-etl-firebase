@@ -1,5 +1,7 @@
 # dfl-etl-firebase
 
+http://ex-ture.com/blog/2018/02/10/dataflow-to-faltten-firebase-schema/
+
 FirebaseAnalyticsのJSON形式のBigQueryスキーマを、フラットな一行のタブ区切りファイル(TSV)形式に変換するためのパイプライン処理をCloud Dataflowで実装した例です。
 
 Google Cloud PlatformのCloud Dataflowの他に、Cloud Storageも使います。
