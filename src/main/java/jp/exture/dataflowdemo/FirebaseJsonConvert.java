@@ -121,7 +121,6 @@ public class FirebaseJsonConvert {
                     String firebase_screen_id = "";
                     String engagement_time_msec = "";
 
-                    // eventの数（ヒットの数）だけループ
                     for(int j=0; j<data_event2.size(); j++) {  
                         JSONObject params = (JSONObject) data_event2.get(j);
 
@@ -137,76 +136,77 @@ public class FirebaseJsonConvert {
                           try { engagement_time_msec = (String) value.get("int_value"); } catch(Exception e) {}
                         } 
 
-                        // StringBufferに値を詰め込む。最後に改行を入れる。
-                        cols.append(user_id);
-                        cols.append("\t");
-                        cols.append(first_open_timestamp_micros);
-                        cols.append("\t");
-                        cols.append(device_category);
-                        cols.append("\t");
-                        cols.append(mobile_brand_name);
-                        cols.append("\t");
-                        cols.append(mobile_model_name);
-                        cols.append("\t");
-                        cols.append(mobile_marketing_name);
-                        cols.append("\t");
-                        cols.append(device_model);
-                        cols.append("\t");
-                        cols.append(platform_version);
-                        cols.append("\t");
-                        cols.append(resettable_device);
-                        cols.append("\t");
-                        cols.append(device_id);
-                        cols.append("\t");
-                        cols.append(user_default_language);
-                        cols.append("\t");
-                        cols.append(device_time_zone_offset_seconds);
-                        cols.append("\t");
-                        cols.append(limited_ad_tracking);
-                        cols.append("\t");
-                        cols.append(continent);
-                        cols.append("\t");
-                        cols.append(country);
-                        cols.append("\t");
-                        cols.append(region);
-                        cols.append("\t");
-                        cols.append(city);
-                        cols.append("\t");
-                        cols.append(app_version);
-                        cols.append("\t");
-                        cols.append(app_instance_id);
-                        cols.append("\t");
-                        cols.append(app_store);
-                        cols.append("\t");
-                        cols.append(app_platform);
-                        cols.append("\t");
-                        cols.append(app_id);
-                        cols.append("\t");
-                        cols.append(user_acquired_campaign);
-                        cols.append("\t");
-                        cols.append(user_acquired_medium);
-                        cols.append("\t");
-                        cols.append(user_acquired_source);
-                        cols.append("\t");
-                        cols.append(bundle_sequence_id);
-                        cols.append("\t");
-                        cols.append(revenue);
-                        cols.append("\t");
-                        cols.append(currency);
-                        cols.append("\t");
-                        cols.append(date);
-                        cols.append("\t");
-                        cols.append(event_name);
-                        cols.append("\t");
-                        cols.append(timestamp_micros);
-                        cols.append("\t");
-                        cols.append(firebase_screen_class);
-                        cols.append("\t");
-                        cols.append(firebase_screen_id);
-                        cols.append("\t");
-                        cols.append(engagement_time_msec);
-                        cols.append("\n");
                     }
+                    
+                    // StringBufferに値を詰め込む。最後に改行を入れる。
+                    cols.append(user_id);
+                    cols.append("\t");
+                    cols.append(first_open_timestamp_micros);
+                    cols.append("\t");
+                    cols.append(device_category);
+                    cols.append("\t");
+                    cols.append(mobile_brand_name);
+                    cols.append("\t");
+                    cols.append(mobile_model_name);
+                    cols.append("\t");
+                    cols.append(mobile_marketing_name);
+                    cols.append("\t");
+                    cols.append(device_model);
+                    cols.append("\t");
+                    cols.append(platform_version);
+                    cols.append("\t");
+                    cols.append(resettable_device);
+                    cols.append("\t");
+                    cols.append(device_id);
+                    cols.append("\t");
+                    cols.append(user_default_language);
+                    cols.append("\t");
+                    cols.append(device_time_zone_offset_seconds);
+                    cols.append("\t");
+                    cols.append(limited_ad_tracking);
+                    cols.append("\t");
+                    cols.append(continent);
+                    cols.append("\t");
+                    cols.append(country);
+                    cols.append("\t");
+                    cols.append(region);
+                    cols.append("\t");
+                    cols.append(city);
+                    cols.append("\t");
+                    cols.append(app_version);
+                    cols.append("\t");
+                    cols.append(app_instance_id);
+                    cols.append("\t");
+                    cols.append(app_store);
+                    cols.append("\t");
+                    cols.append(app_platform);
+                    cols.append("\t");
+                    cols.append(app_id);
+                    cols.append("\t");
+                    cols.append(user_acquired_campaign);
+                    cols.append("\t");
+                    cols.append(user_acquired_medium);
+                    cols.append("\t");
+                    cols.append(user_acquired_source);
+                    cols.append("\t");
+                    cols.append(bundle_sequence_id);
+                    cols.append("\t");
+                    cols.append(revenue);
+                    cols.append("\t");
+                    cols.append(currency);
+                    cols.append("\t");
+                    cols.append(date);
+                    cols.append("\t");
+                    cols.append(event_name);
+                    cols.append("\t");
+                    cols.append(timestamp_micros);
+                    cols.append("\t");
+                    cols.append(firebase_screen_class);
+                    cols.append("\t");
+                    cols.append(firebase_screen_id);
+                    cols.append("\t");
+                    cols.append(engagement_time_msec);
+                    cols.append("\n");
                 } 
 
             } catch (Exception e) {}    
