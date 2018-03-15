@@ -138,7 +138,7 @@ public class FirebaseJsonConvert {
 
                     }
                     
-                    // StringBufferに値を詰め込む。最後に改行を入れる。
+                    // StringBufferに値を詰め込む。
                     cols.append(user_id);
                     cols.append("\t");
                     cols.append(first_open_timestamp_micros);
@@ -206,7 +206,6 @@ public class FirebaseJsonConvert {
                     cols.append(firebase_screen_id);
                     cols.append("\t");
                     cols.append(engagement_time_msec);
-                    cols.append("\n");
                 } 
 
             } catch (Exception e) {}    
